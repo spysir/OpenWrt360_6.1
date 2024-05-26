@@ -120,5 +120,20 @@ sed -i 's|admin\\|admin\\/services\\|g' feeds/luci/applications/luci-app-dockerm
 # 取消对 samba4 的菜单调整
 # sed -i '/samba4/s/^/#/' package/lean/default-settings/files/zzz-default-settings
 
+# 修改插件名字
+sed -i 's/"aMule设置"/"电驴下载"/g' `egrep "aMule设置" -rl ./`
+sed -i 's/"网络存储"/"存储"/g' `egrep "网络存储" -rl ./`
+sed -i 's/"Turbo ACC 网络加速"/"网络加速"/g' `egrep "Turbo ACC 网络加速" -rl ./`
+sed -i 's/"KMS 服务器"/"KMS激活"/g' `egrep "KMS 服务器" -rl ./`
+sed -i 's/"终端"/"命令窗"/g' `egrep "终端" -rl ./`
+sed -i 's/"USB 打印服务器"/"打印服务"/g' `egrep "USB 打印服务器" -rl ./`
+sed -i 's/"Web 管理"/"访问控制"/g' `egrep "Web 管理" -rl ./`
+sed -i 's/"管理权"/"改密码"/g' `egrep "管理权" -rl ./`
+
+sed -i 's/"上网时间控制"/"上网控制"/g' `egrep "上网时间控制" -rl ./`
+sed -i 's/"frp 客户端"/"内网穿透"/g' `egrep "frp 客户端" -rl ./`
+sed -i 's/"Nps 内网穿透"/"内网穿透"/g' `egrep "Nps 内网穿透" -rl ./`
+
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
